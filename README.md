@@ -73,8 +73,8 @@ There are all Shreder basic functions that can be used to bruteforce specified d
 from shreder import Shreder
 
 shreder = Shreder()
-password = shreder.brute(192.168.2.109, 22, 'mobile', 'passwords.txt')
 
+password = shreder.brute(192.168.2.109, 22, 'mobile', 'passwords.txt')
 print(f"Password: {password}")
 ```
 
