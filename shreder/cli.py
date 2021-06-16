@@ -31,7 +31,7 @@ from .badges import Badges
 
 
 class ShrederCLI(Shreder, Badges):
-    description = ""
+    description = "Shreder is a multi-threaded SSH brute forcing tool."
     parser = argparse.ArgumentParser(description=description)
     parser.add_argument('-a', '--address', dest='address', help='Single address.')
     parser.add_argument('-u', '--username', dest='username', help='SSH username.')
