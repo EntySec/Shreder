@@ -49,6 +49,7 @@ shreder 192.168.2.109 -u mobile -l passwords.txt
 [*] Cooling down after process...
 [+] Password has been found!
 [i] Password: alpine
+[i] Time elapsed: 1.0647449493408203
 ```
 
 ## Shreder API
