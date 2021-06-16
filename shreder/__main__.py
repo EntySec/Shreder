@@ -39,7 +39,7 @@ class Shreder(Badges):
                 ssh = paramiko.client.SSHClient()
                 ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 
-                self.print_multi(f"Trying ({password}) on of ({str(state)/str(total)}) ...")
+                self.print_multi(f"Trying ({password}) on of ({str(state)}/{str(total)}) ...")
                 try:
                     ssh.connect(host, port=int(port), username=username, password=password)
                 except paramiko.AuthenticationException:
