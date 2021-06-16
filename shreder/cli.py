@@ -24,6 +24,7 @@
 # SOFTWARE.
 #
 
+import time
 import argparse
 
 from .__main__ import Shreder
@@ -44,18 +45,21 @@ class ShrederCLI(Shreder, Badges):
             if not self.args.port:
                 self.args.port = 22
 
+            start = time.time()
             password = self.brute(
                 self.args.target,
                 self.args.port,
                 self.args.username,
                 self.args.list
             )
+            end = time.time()
 
             if password:
                 self.print_success("Password has been found!")
                 self.print_information(f"Password: {password}")
             else:
                 self.print_warning("Password is not found.")
+            self.print_information(f"Time elapsed: {str(end - start)}")
         else:
             self.args.print_help()
 
