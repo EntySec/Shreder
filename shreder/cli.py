@@ -33,24 +33,31 @@ from .badges import Badges
 class ShrederCLI(Shreder, Badges):
     description = "Shreder is a multi-threaded SSH brute forcing tool."
     parser = argparse.ArgumentParser(description=description)
-    parser.add_argument('-a', '--address', dest='address', help='Single address.')
+    parser.add_argument('target')
+    parser.add_argument('-p', '--port', dest='port', help='SSH port.')
     parser.add_argument('-u', '--username', dest='username', help='SSH username.')
     parser.add_argument('-l', '--list', dest='list', help='Passwords list.')
     args = parser.parse_args()
 
     def start(self):
-        password = self.brute(
-            self.args.address.split(':')[0],
-            self.args.address.split(':')[1],
-            self.args.username,
-            self.args.list
-        )
+        if self.args.target and self.args.username and self.args.list:
+            if not self.args.port:
+                self.args.port = 22
 
-        if password:
-            self.output_success("Password has been found!")
-            self.output_information(f"Password: {password}")
+            password = self.brute(
+                self.args.address.split(':')[0],
+                self.args.address.split(':')[1],
+                self.args.username,
+                self.args.list
+            )
+
+            if password:
+                self.output_success("Password has been found!")
+                self.output_information(f"Password: {password}")
+            else:
+                self.output_warning("Password is not found.")
         else:
-            self.output_warning("Password is not found.")
+            self.args.print_help()
 
 def main():
     cli = ShrederCLI()
