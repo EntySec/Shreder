@@ -44,3 +44,7 @@ class Badges:
     @staticmethod
     def print_information(message):
         print(f"\033[1;77m[i]\033[0m {message}")
+
+    @staticmethod
+    def print_multi(message):
+        print(f"\r\033[1;34m[*]\033[0m {message}", end='')
