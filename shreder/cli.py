@@ -32,7 +32,7 @@ from .badges import Badges
 
 
 class ShrederCLI(Shreder, Badges):
-    description = "Shreder is a multi-threaded SSH brute forcing tool."
+    description = "Shreder is a powerful multi-threaded SSH protocol password bruteforce tool."
     parser = argparse.ArgumentParser(description=description)
     parser.add_argument('target')
     parser.add_argument('-p', '--port', dest='port', help='SSH port.')
