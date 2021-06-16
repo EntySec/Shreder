@@ -58,4 +58,4 @@ class Shreder(Badges):
                     thread.start()
 
                     state += 1
-            return None
+        return self.password
