@@ -47,6 +47,6 @@ class Shreder(Badges):
                         ssh.close()
                     else:
                         return password
-                    return None
 
                     state += 1
+            return None
