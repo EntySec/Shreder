@@ -59,16 +59,17 @@ class Shreder(Badges):
                         )
                     )
 
-            counter = 1
+            line = "/-\|"
             for thread in threads:
                 if not self.password:
-                    self.print_multi(f"Starting SSH threads... ({str(counter)}/{str(len(lines))})")
+                    for char in line:
+                        self.print_multi(f"Starting SSH threads... {state}")
                     ssh_delay(self.ssh_delay)
 
                     thread.start()
-                    counter += 1
 
             for thread in threads:
-                thread.join()
+                if thread.is_alive():
+                    thread.join()
 
         return self.password
