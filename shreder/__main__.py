@@ -75,7 +75,9 @@ class Shreder(Badges):
                     counter += 1
                     tried += 1
 
-            self.print_process("\nCooling down after process...")
+            print()
+            self.print_process("Cooling down after process...")
+
             for thread in threads:
                 if thread.is_alive():
                     thread.join()
