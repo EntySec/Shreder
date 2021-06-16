@@ -52,10 +52,10 @@ class ShrederCLI(Shreder, Badges):
             )
 
             if password:
-                self.output_success("Password has been found!")
-                self.output_information(f"Password: {password}")
+                self.print_success("Password has been found!")
+                self.print_information(f"Password: {password}")
             else:
-                self.output_warning("Password is not found.")
+                self.print_warning("Password is not found.")
         else:
             self.args.print_help()
 
