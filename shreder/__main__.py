@@ -56,12 +56,12 @@ class Shreder(Badges):
                         )
                     )
 
-            counter = 0
+            counter = 1
             for thread in threads:
-                self.print_multi(f"Proceeding... ({str(counter)}/{str(len(lines))})")
-                thread.start()
-
-                counter += 1
+                if not self.password:
+                    self.print_multi(f"Proceeding... ({str(counter)}/{str(len(lines))})")
+                    thread.start()
+                    counter += 1
             
             for thread in threads:
                 thread.join()
