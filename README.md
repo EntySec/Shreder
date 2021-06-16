@@ -5,7 +5,7 @@ Shreder is a multi-threaded SSH brute forcing tool.
 ## Features
 
 * Very fast password guessing, just one password in `0.1` second.
-* Optimized for big password lists, Shreder tries 1000 passwords in `100` seconds.
+* Optimized for big password lists, Shreder tries 1000 passwords in `1` minute and `40` seconds.
 * Simple CLI and API usage.
 
 ## Installation
