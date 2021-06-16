@@ -67,13 +67,15 @@ class Shreder(Badges):
                 if not self.password:
                     if counter >= len(line):
                         counter = 0
-                    self.print_multi(f"Processing... {line[counter]} | Passwords tried: {tried}")
+                    self.print_multi(f"Processing... {line[counter]} | Passwords tried: {tried}/{str(len(threads))}")
 
                     ssh_delay(self.ssh_delay)
                     thread.start()
 
                     counter += 1
                     tried += 1
+
+            self.print_process("\nCooling down after process...")
             for thread in threads:
                 if thread.is_alive():
                     thread.join()
