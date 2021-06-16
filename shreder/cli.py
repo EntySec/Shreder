@@ -45,8 +45,8 @@ class ShrederCLI(Shreder, Badges):
                 self.args.port = 22
 
             password = self.brute(
-                self.args.address.split(':')[0],
-                self.args.address.split(':')[1],
+                self.args.targt,
+                self.args.port,
                 self.args.username,
                 self.args.list
             )
