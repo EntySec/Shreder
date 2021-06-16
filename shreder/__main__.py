@@ -59,7 +59,7 @@ class Shreder(Badges):
 
             counter = 0
             for thread in threads:
-                self.print_multi(f"Proceeding... ({str(state)}/{str(len(lines))})")
+                self.print_multi(f"Proceeding... ({str(counter)}/{str(len(lines))})")
                 thread.start()
 
                 counter += 1
