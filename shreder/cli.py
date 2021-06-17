@@ -61,7 +61,7 @@ class ShrederCLI(Shreder, Badges):
                 self.print_warning("Password is not found.")
             self.print_information(f"Time elapsed: {str(end - start)}")
         else:
-            self.args.print_help()
+            self.parser.print_help()
 
 def main():
     cli = ShrederCLI()
