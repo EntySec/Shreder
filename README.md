@@ -65,7 +65,7 @@ from shreder import Shreder
 There are all Shreder basic functions that can be used to bruteforce specified device.
 
 * `connect(host, port, username, password)` - Connect specified defice by network address.
-* `brute(host, port, username, list)` - Bruteforce device with list of passwords.
+* `brute(host, port, username, dictionary)` - Bruteforce device with list of passwords.
 
 ### Examples
 
