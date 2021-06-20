@@ -67,7 +67,7 @@ class Shreder(Badges):
                     if counter >= 4:
                         counter = 0
                     self.print_process(
-                        f"Processing... {'/-\|'[counter]} | Passwords tried: {tried}/{str(len(threads))}",
+                        f"Processing... {'/-\\|'[counter]} | Passwords tried: {tried}/{str(len(threads))}",
                         end=''
                     )
 
