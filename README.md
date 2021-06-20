@@ -42,16 +42,6 @@ Let's bruteforce my device just for fun.
 shreder 192.168.2.109 -u mobile -l passwords.txt
 ```
 
-**output:**
-
-```shell
-[*] Processing... \ | Passwords tried: 8/8
-[*] Cooling down after process...
-[+] Password has been found!
-[i] Password: alpine
-[i] Time elapsed: 1.0647449493408203
-```
-
 ## Shreder API
 
 Shreder also has their own Python API that can be invoked by importing Shreder to your code:
