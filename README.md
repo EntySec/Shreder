@@ -1,6 +1,6 @@
 # Shreder
 
-Shreder is a powerful multi-threaded SSH protocol password bruteforce tool.
+Shreder is a powerful multi-threaded SSH protocol password brute-force tool.
 
 ## Features
 
@@ -36,15 +36,17 @@ optional arguments:
 
 ### Examples
 
-Let's bruteforce my device just for fun.
+**Brute-forcing single target**
+
+Let's brute-force my device just for fun.
 
 ```shell
 shreder 192.168.2.109 -u mobile -l passwords.txt
 ```
 
-## Shreder API
+## API usage
 
-Shreder also has their own Python API that can be invoked by importing Shreder to your code:
+Shreder also has their own Python API that can be invoked by importing Shreder to your code.
 
 ```python
 from shreder import Shreder
@@ -52,28 +54,22 @@ from shreder import Shreder
 
 ### Basic functions
 
-There are all Shreder basic functions that can be used to bruteforce specified device.
+There are all Shreder basic functions that can be used to brute-force single target.
 
-* `connect(host, port, username, password)` - Connect specified defice by network address.
-* `brute(host, port, username, dictionary)` - Bruteforce device with list of passwords.
+* `connect(host, port, username, password)` - Connect single target by given address.
+* `brute(host, port, username, dictionary)` - Brute-force single target by given address.
 
 ### Examples
+
+**Brute-forcing single target**
 
 ```python
 from shreder import Shreder
 
 shreder = Shreder()
-
 password = shreder.brute(192.168.2.109, 22, 'mobile', 'passwords.txt')
-print(f"Password: {password}")
-```
 
-**output:**
-
-```shell
-[*] Processing... \ | Passwords tried: 8/8
-[*] Cooling down after process...
-Password: alpine
+print(password)
 ```
 
 ## Other tools
