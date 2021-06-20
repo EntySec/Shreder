@@ -76,7 +76,7 @@ class Shreder(Badges):
 
                     counter += 1
                     tried += 1
-            self.print_empty("", end='')
+            self.print_empty(end='')
 
             for thread in threads:
                 if thread.is_alive():
