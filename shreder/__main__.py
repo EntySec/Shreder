@@ -31,6 +31,7 @@ from threading import Thread as ssh_thread
 
 from .badges import Badges
 
+
 class Shreder(Badges):
     password = None
     ssh_delay = 0.1
