@@ -21,7 +21,7 @@ To use Shreder just type `shreder` in your terminal.
 ```
 usage: shreder [-h] [-p PORT] [-u USERNAME] [-l LIST] target
 
-Shreder is a powerful multi-threaded SSH protocol password bruteforce tool.
+Shreder is a powerful multi-threaded SSH protocol password brute-force tool.
 
 positional arguments:
   target
