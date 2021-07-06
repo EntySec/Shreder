@@ -1,5 +1,17 @@
 # Shreder
 
+<p>
+    <a href="https://entysec.netlify.app">
+        <img src="https://img.shields.io/badge/developer-EntySec-3572a5.svg">
+    </a>
+    <a href="https://github.com/EntySec/Shreder">
+        <img src="https://img.shields.io/badge/language-Python-3572a5.svg">
+    </a>
+    <a href="https://github.com/EntySec/Shreder/stargazers">
+        <img src="https://img.shields.io/github/stars/EntySec/Shreder?color=yellow">
+    </a>
+</p>
+
 Shreder is a powerful multi-threaded SSH protocol password brute-force tool.
 
 ## Features
@@ -76,27 +88,27 @@ print(password)
 
 <p>
     <a href="https://github.com/EntySec/Ghost">
-        <img src="https://img.shields.io/badge/EntySec-%20Ghost-3572a5.svg">
+        <img src="https://img.shields.io/badge/EntySec-Ghost-3572a5.svg">
     </a>
     <a href="https://github.com/EntySec/HatVenom">
-        <img src="https://img.shields.io/badge/EntySec-%20HatVenom-3572a5.svg">
+        <img src="https://img.shields.io/badge/EntySec-HatVenom-3572a5.svg">
     </a>
     <a href="https://github.com/EntySec/RomBuster">
-        <img src="https://img.shields.io/badge/EntySec-%20RomBuster-3572a5.svg">
+        <img src="https://img.shields.io/badge/EntySec-RomBuster-3572a5.svg">
     </a>
     <a href="https://github.com/EntySec/HatSploit">
-        <img src="https://img.shields.io/badge/EntySec-%20HatSploit-3572a5.svg">
+        <img src="https://img.shields.io/badge/EntySec-HatSploit-3572a5.svg">
     </a>
     <a href="https://github.com/EntySec/CamOver">
-        <img src="https://img.shields.io/badge/EntySec-%20CamOver-3572a5.svg">
+        <img src="https://img.shields.io/badge/EntySec-CamOver-3572a5.svg">
     </a>
     <a href="https://github.com/EntySec/CamRaptor">
-        <img src="https://img.shields.io/badge/EntySec-%20CamRaptor-3572a5.svg">
+        <img src="https://img.shields.io/badge/EntySec-CamRaptor-3572a5.svg">
     </a>
     <a href="https://github.com/EntySec/membrane">
-        <img src="https://img.shields.io/badge/EntySec-%20membrane-f34c79.svg">
+        <img src="https://img.shields.io/badge/EntySec-membrane-f34c79.svg">
     </a>
     <a href="https://github.com/EntySec/pwny">
-        <img src="https://img.shields.io/badge/EntySec-%20pwny-448eff.svg">
+        <img src="https://img.shields.io/badge/EntySec-pwny-448eff.svg">
     </a>
 </p>
