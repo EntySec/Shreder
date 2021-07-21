@@ -27,7 +27,7 @@
 from setuptools import setup, find_packages
 
 setup(name='shreder',
-      version='1.0',
+      version='1.0.0',
       description='Shreder is a powerful multi-threaded SSH protocol password bruteforce tool.',
       url='http://github.com/EntySec/Shreder',
       author='EntySec',
