@@ -40,10 +40,5 @@ setup(name='shreder',
                 "shreder = shreder.cli:main"
           ]
       },
-      classifiers=[
-          "Programming Language :: Python",
-          "Programming Language :: Python :: 3",
-          "Programming Language :: Python :: 3.8",
-      ],
       zip_safe=False
 )
