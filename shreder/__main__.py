@@ -46,7 +46,7 @@ class Shreder(Badges):
             return
         ssh.close()
 
-    def brute(self, host, port, username, dictionary, delay):
+    def brute(self, host, port, username, dictionary, delay=0.1):
         with open(dictionary, 'r') as f:
             threads = list()
             lines = f.read().split('\n')
