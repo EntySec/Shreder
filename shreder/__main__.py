@@ -46,7 +46,7 @@ class Shreder(Badges):
             return
         ssh.close()
 
-    def brute(self, host, port, username, dictionary, ssh_delay=0.1):
+    def brute(self, host, port, username, dictionary, delay=0.1):
         with open(dictionary, 'r') as f:
             threads = list()
             lines = f.read().split('\n')
@@ -72,7 +72,7 @@ class Shreder(Badges):
                         f"Processing... {line[counter]} | Passwords tried: {tried}/{str(len(threads))}", end=''
                     )
 
-                    ssh_delay(ssh_delay)
+                    ssh_delay(delay)
                     thread.start()
 
                     counter += 1
