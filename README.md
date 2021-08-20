@@ -44,6 +44,8 @@ optional arguments:
   -u USERNAME, --username USERNAME
                         SSH username.
   -l LIST, --list LIST  Passwords list.
+  -d DELAY, --delay DELAY
+                        Delay between login attempts.
 ```
 
 ### Examples
