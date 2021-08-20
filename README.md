@@ -31,7 +31,7 @@ pip3 install git+https://github.com/EntySec/Shreder
 To use Shreder just type `shreder` in your terminal.
 
 ```
-usage: shreder [-h] [-p PORT] [-u USERNAME] [-l LIST] target
+usage: shreder [-h] [-p PORT] [-u USERNAME] [-l LIST] [-d DELAY] target
 
 Shreder is a powerful multi-threaded SSH protocol password brute-force tool.
 
