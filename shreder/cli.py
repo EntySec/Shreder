@@ -39,6 +39,7 @@ class ShrederCLI(Shreder, Badges):
     parser.add_argument('-p', '--port', dest='port', help='SSH port.')
     parser.add_argument('-u', '--username', dest='username', help='SSH username.')
     parser.add_argument('-l', '--list', dest='list', help='Passwords list.')
+    parser.add_argument('-d', '--delay', dest='delay', help='Delay between login attempts.')
     args = parser.parse_args()
 
     def start(self):
@@ -51,12 +52,21 @@ class ShrederCLI(Shreder, Badges):
                 self.args.port = 22
 
             start = time.time()
-            password = self.brute(
-                self.args.target,
-                self.args.port,
-                self.args.username,
-                self.args.list
-            )
+            if self.args.delay:
+                password = self.brute(
+                    self.args.target,
+                    self.args.port,
+                    self.args.username,
+                    self.args.list
+                )
+            else:
+                password = self.brute(
+                    self.args.target,
+                    self.args.port,
+                    self.args.username,
+                    self.args.list,
+                    int(self.args.delay)
+                )
             end = time.time()
 
             if password:
