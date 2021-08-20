@@ -52,21 +52,13 @@ class ShrederCLI(Shreder, Badges):
                 self.args.port = 22
 
             start = time.time()
-            if self.args.delay:
-                password = self.brute(
-                    self.args.target,
-                    self.args.port,
-                    self.args.username,
-                    self.args.list
-                )
-            else:
-                password = self.brute(
-                    self.args.target,
-                    self.args.port,
-                    self.args.username,
-                    self.args.list,
-                    int(self.args.delay)
-                )
+            password = self.brute(
+                self.args.target,
+                self.args.port,
+                self.args.username,
+                self.args.list,
+                float(self.args.delay) if self.args.delay else 0.1
+            )
             end = time.time()
 
             if password:
