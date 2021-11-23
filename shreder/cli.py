@@ -45,7 +45,7 @@ class ShrederCLI(Shreder, Badges):
     def start(self):
         if self.args.target and self.args.username and self.args.list:
             if not os.path.exists(self.args.list):
-                self.print_error(f"List file: {self.args.input}: does not exist!")
+                self.print_error(f"List file: {self.args.list}: does not exist!")
                 return
 
             if not self.args.port:
