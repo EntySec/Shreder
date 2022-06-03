@@ -28,7 +28,7 @@ setup(name='shreder',
       version='1.0.0',
       description=(
           'Shreder is a powerful multi-threaded SSH protocol'
-          'password brute-force tool.'
+          ' password brute-force tool.'
       ),
       url='http://github.com/EntySec/Shreder',
       author='EntySec',
