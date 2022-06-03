@@ -39,7 +39,7 @@ class ShrederCLI(Shreder, Badges):
 
     description = (
         'Shreder is a powerful multi-threaded SSH protocol'
-        'password brute-force tool.'
+        ' password brute-force tool.'
     )
 
     parser = argparse.ArgumentParser(description=description)
