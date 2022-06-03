@@ -56,7 +56,8 @@ class Shreder(Badges):
             ssh.connect(host, port=int(port), username=username, password=password)
             self.password = password
         except Exception:
-            return
+            pass
+
         ssh.close()
 
     def brute(self, host: str, port: int, username: str, dictionary: str,
