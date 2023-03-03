@@ -37,7 +37,10 @@ class Shreder(Badges):
     implementations of SSH protocol brute-forcing methods.
     """
 
-    password = ""
+    def __init__(self):
+        super().__init__()
+
+        self.password = ""
 
     def connect(self, host: str, port: int, username: str, password: str) -> None:
         """ Connect to the remote host.
