@@ -22,9 +22,11 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-import paramiko
 import threading
-from time import sleep as ssh_delay
+
+from pex.proto.ssh import SSHClient
+
+from time import sleep
 from typing import Union
 
 from .badges import Badges
@@ -52,16 +54,20 @@ class Shreder(Badges):
         :return None: None
         """
 
-        ssh = paramiko.client.SSHClient()
-        ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+        client = SSHClient(
+            host=host,
+            port=int(port),
+            username=username,
+            password=password
+        )
 
         try:
-            ssh.connect(host, port=int(port), username=username, password=password)
+            client.connect()
             self.password = password
+            client.disconnect()
+
         except Exception:
             pass
-
-        ssh.close()
 
     def brute(self, host: str, port: int, username: str, dictionary: str,
               delay: Union[float, int] = 0.1) -> str:
@@ -101,7 +107,7 @@ class Shreder(Badges):
                         f"Processing... {line[counter]} | Passwords tried: {tried}/{str(len(threads))}", end=''
                     )
 
-                    ssh_delay(delay)
+                    sleep(delay)
                     thread.start()
 
                     counter += 1

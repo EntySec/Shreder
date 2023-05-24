@@ -41,5 +41,8 @@ setup(name='shreder',
               "shreder = shreder.cli:main"
           ]
       },
+      install_requires=[
+          'pex @ git+https://github.com/EntySec/Pex',
+      ],
       zip_safe=False
       )
