@@ -43,6 +43,7 @@ setup(name='shreder',
       },
       install_requires=[
           'pex @ git+https://github.com/EntySec/Pex',
+          'badges @ git+https://github.com/EntySec/Badges'
       ],
       zip_safe=False
       )
