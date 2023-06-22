@@ -29,7 +29,7 @@ from pex.proto.ssh import SSHClient
 from time import sleep
 from typing import Union
 
-from .badges import Badges
+from badges import Badges
 
 
 class Shreder(Badges):
