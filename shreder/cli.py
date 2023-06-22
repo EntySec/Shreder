@@ -27,7 +27,7 @@ import os
 import time
 
 from .__main__ import Shreder
-from .badges import Badges
+from badges import Badges
 
 
 class ShrederCLI(Shreder, Badges):
