@@ -1,6 +1,6 @@
 # Shreder
 
-<p>
+
     <a href="https://entysec.com">
         <img src="https://img.shields.io/badge/developer-EntySec-blue.svg">
     </a>
@@ -10,7 +10,7 @@
     <a href="https://github.com/EntySec/Shreder/stargazers">
         <img src="https://img.shields.io/github/stars/EntySec/Shreder?color=yellow">
     </a>
-</p>
+
 
 Shreder is a powerful multi-threaded SSH protocol password brute-force tool.
 
