@@ -93,5 +93,8 @@ def main() -> None:
     :return None: None
     """
 
-    cli = ShrederCLI()
-    cli.start()
+    try:
+        cli = ShrederCLI()
+        cli.start()
+    except BaseException:
+        pass
