@@ -66,7 +66,7 @@ class Shreder(Badges):
             self.password = password
             client.disconnect()
 
-        except Exception:
+        except BaseException:
             pass
 
     def brute(self, host: str, port: int, username: str, dictionary: str,
