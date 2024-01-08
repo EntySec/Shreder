@@ -1,22 +1,10 @@
 # Shreder
 
-<p>
-    <a href="https://entysec.com">
-        <img src="https://img.shields.io/badge/developer-EntySec-blue.svg">
-    </a>
-    <a href="https://github.com/EntySec/Shreder">
-        <img src="https://img.shields.io/badge/language-Python-blue.svg">
-    </a>
-    <a href="https://github.com/EntySec/Shreder/forks">
-        <img src="https://img.shields.io/github/forks/EntySec/Shreder?color=green">
-    </a>
-    <a href="https://github.com/EntySec/Shreder/stargazers">
-        <img src="https://img.shields.io/github/stars/EntySec/Shreder?color=yellow">
-    </a>
-    <a href="https://www.codefactor.io/repository/github/EntySec/Shreder">
-        <img src="https://www.codefactor.io/repository/github/EntySec/Shreder/badge">
-    </a>
-</p>
+[![Developer](https://img.shields.io/badge/developer-EntySec-blue.svg)](https://entysec.com)
+[![Language](https://img.shields.io/badge/language-Python-blue.svg)](https://github.com/EntySec/Shreder)
+[![Forks](https://img.shields.io/github/forks/EntySec/Shreder?style=flat&color=green)](https://github.com/EntySec/Shreder/forks)
+[![Stars](https://img.shields.io/github/stars/EntySec/Shreder?style=flat&color=yellow)](https://github.com/EntySec/Shreder/stargazers)
+[![CodeFactor](https://www.codefactor.io/repository/github/EntySec/Shreder/badge)](https://www.codefactor.io/repository/github/EntySec/Shreder)
 
 Shreder is a powerful multi-threaded SSH protocol password brute-force tool.
 
