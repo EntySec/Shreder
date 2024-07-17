@@ -22,9 +22,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-import argparse
 import os
 import time
+import argparse
 
 from .__main__ import Shreder
 from badges import Badges
@@ -37,21 +37,18 @@ class ShrederCLI(Shreder, Badges):
     command-line interface for Shreder.
     """
 
-    def __init__(self) -> None:
-        super().__init__()
+    description = (
+        'Shreder is a powerful multi-threaded SSH protocol'
+        ' password brute-force tool.'
+    )
 
-        self.description = (
-            'Shreder is a powerful multi-threaded SSH protocol'
-            ' password brute-force tool.'
-        )
-
-        self.parser = argparse.ArgumentParser(description=self.description)
-        self.parser.add_argument('target')
-        self.parser.add_argument('-p', '--port', dest='port', help='SSH port.')
-        self.parser.add_argument('-u', '--username', dest='username', help='SSH username.')
-        self.parser.add_argument('-l', '--list', dest='list', help='Passwords list.')
-        self.parser.add_argument('-d', '--delay', dest='delay', help='Delay between login attempts.')
-        self.args = self.parser.parse_args()
+    parser = argparse.ArgumentParser(description=description)
+    parser.add_argument('target')
+    parser.add_argument('-p', '--port', dest='port', help='SSH port.')
+    parser.add_argument('-u', '--username', dest='username', help='SSH username.')
+    parser.add_argument('-l', '--list', dest='list', help='Passwords list.')
+    parser.add_argument('-d', '--delay', dest='delay', help='Delay between login attempts.')
+    args = parser.parse_args()
 
     def start(self) -> None:
         """ Main command-line arguments handler.
