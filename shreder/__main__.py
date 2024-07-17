@@ -22,14 +22,13 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
+import time
 import threading
 
-from pex.proto.ssh import SSHClient
-
-from time import sleep
 from typing import Union
-
 from badges import Badges
+
+from pex.proto.ssh import SSHClient
 
 
 class Shreder(Badges):
@@ -39,10 +38,7 @@ class Shreder(Badges):
     implementations of SSH protocol brute-forcing methods.
     """
 
-    def __init__(self) -> None:
-        super().__init__()
-
-        self.password = ""
+    password = ""
 
     def connect(self, host: str, port: int, username: str, password: str) -> None:
         """ Connect to the remote host.
