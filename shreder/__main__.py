@@ -103,7 +103,7 @@ class Shreder(Badges):
                         f"Processing... {line[counter]} | Passwords tried: {tried}/{str(len(threads))}", end=''
                     )
 
-                    sleep(delay)
+                    time.sleep(delay)
                     thread.start()
 
                     counter += 1
